@@ -1,0 +1,22 @@
+name: build and run docker
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: build docker image
+        run: docker build -t node-test .
+      - name: run docker and print node version
+        run: docker run --name cntr node-test
+      - name: run docker bash 
+        run: run docker exec -it cntr bash 
+      - name: print node version
+        run: node --version
+      - name: stop container
+        run: docker stop cntr
