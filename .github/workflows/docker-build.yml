@@ -9,10 +9,10 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v4
       - name: build docker image
-        run: docker build -t node-test .
+        run: docker build -t node-test2 .
       - name: run docker and print node version
-        run: docker run --name cntr node-test
+        run: docker run --name contnr2 node-test2
       - name: run docker bash 
-        run: run docker exec cntr sh -c 'echo "hello world"' 
+        run: run docker exec contnr2 sh -c 'echo "hello world"' 
       - name: stop container
         run: docker stop cntr
