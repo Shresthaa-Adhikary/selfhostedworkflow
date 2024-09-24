@@ -9,9 +9,9 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v4
       - name: build docker image
-        run: docker build -t node-test2 .
+        run: docker build -t i3 .
       - name: run docker 
-        run: docker run --name c2 node-test2
+        run: docker run --name c3 i3
       - name: run docker and print node version 
         run: |
              "node --version"
