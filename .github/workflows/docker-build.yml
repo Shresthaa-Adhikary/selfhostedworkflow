@@ -13,6 +13,9 @@ jobs:
       - name: run docker 
         run: docker run --name c2 node-test2
       - name: run docker and print node version 
-        run: docker exec c2 sh -c "node --version" 
+        run: |
+             "node --version"
+             echo "hello world" 
+        shell: bash
       - name: stop container
         run: docker stop cntr
