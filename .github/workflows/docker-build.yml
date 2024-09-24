@@ -11,8 +11,8 @@ jobs:
       - name: build docker image
         run: docker build -t node-test2 .
       - name: run docker 
-        run: docker run --name contnr2 node-test2
+        run: docker run --name c2 node-test2
       - name: run docker and print node version 
-        run: docker exec contnr2 sh -c "node --version" 
+        run: docker exec c2 sh -c "node --version" 
       - name: stop container
         run: docker stop cntr
