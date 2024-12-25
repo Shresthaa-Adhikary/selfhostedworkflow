@@ -11,11 +11,4 @@ jobs:
       - name: build docker image
         run: docker build -t i3 .
       - name: run docker 
-        run: docker run --name c3 i3
-      - name: run docker and print node version 
-        run: |
-             "node --version"
-             echo "hello world" 
-        shell: bash
-      - name: stop container
-        run: docker stop cntr
+        run: docker run i3 node --version
